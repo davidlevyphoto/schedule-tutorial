@@ -7,6 +7,7 @@ import { MyBookstoresPage } from '../pages/pages';
 import { BookstoresPage } from '../pages/pages';
 import { CitiesPage } from '../pages/pages';
 import { FeedPage } from '../pages/pages';
+import { BookstoreDetailPage, BookstoreHomePage, BookstoreBooksPage } from '../pages/pages';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { FeedPage } from '../pages/pages';
     MyBookstoresPage,
     CitiesPage,
     FeedPage,
-    BookstoresPage
+    BookstoresPage,
+    BookstoreDetailPage,
+    BookstoreHomePage,
+    BookstoreBooksPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -25,7 +29,10 @@ import { FeedPage } from '../pages/pages';
     MyBookstoresPage,
     CitiesPage,
     FeedPage,
-    BookstoresPage
+    BookstoresPage,
+    BookstoreDetailPage,
+    BookstoreHomePage,
+    BookstoreBooksPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

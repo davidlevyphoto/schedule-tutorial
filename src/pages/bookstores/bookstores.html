@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Bookstores</ion-title>
   </ion-navbar>
 
@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-
+	<ion-list>
+		<button ion-item *ngFor="let bookstore of bookstores" (click)="viewBookstore($event, bookstore)"> 
+			{{bookstore.name}}
+		</button>
+	</ion-list>
 </ion-content>
