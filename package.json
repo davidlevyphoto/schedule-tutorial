@@ -24,6 +24,7 @@
     "@ionic/storage": "2.0.0",
     "angular2-google-maps": "^0.15.0",
     "cordova-plugin-geolocation": "^2.4.3",
+    "cordova-plugin-ionic": "^5.1.6",
     "cordova-sqlite-storage": "^2.0.4",
     "ionic-angular": "2.2.0",
     "ionic-native": "2.4.1",
@@ -59,7 +60,12 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-geolocation": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-ionic": {
+        "APP_ID": "0aa6e663",
+        "CHANNEL_NAME": "Master",
+        "UPDATE_METHOD": "background"
+      }
     }
   }
 }
