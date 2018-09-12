@@ -8,7 +8,33 @@
 	<ion-navbar></ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-	<h2>Books</h2>
+<!-- 	
+	<ion-card *ngFor="let book of books">
+	  <img src="{{book.imageLinks.thumbnail}}"/>
+	  <ion-card-content>
+	    	<ion-card-title>
+	      		{{book.title}} • {{book.publishedDate}}
+	      	</ion-card-title>
+	    	<p>
+	    		{{book.description}}
+	      	</p>
+	  		<ion-buttons start>
+	      		<button ion-button icon-only>
+	        		<ion-icon name="cart"></ion-icon>
+	      		</button>
+	    	</ion-buttons>
+	  </ion-card-content>
+	</ion-card>
+ -->
+	<ion-list>
+	  <ion-item *ngFor="let book of books">
+	    <ion-thumbnail item-left>
+	      <img src="{{book.imageLinks.smallThumbnail}}">
+	    </ion-thumbnail>
+	    <h2>{{book.title}}</h2>
+	    <p>{{book.authors}} • {{book.publishedDate}}</p>
+	    <button ion-button clear item-right>View</button>
+	  </ion-item>
+	</ion-list>
 </ion-content>

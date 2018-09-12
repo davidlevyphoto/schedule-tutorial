@@ -8,7 +8,46 @@
 	<ion-navbar></ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<h2>Bookstore Detail</h2>
-	<h3>Name : {{bookstore.name}}</h3>
+<ion-content padding class="map-page">
+	<ion-card>
+		<ion-card-content>
+			<ion-row>
+				<ion-col width-50>
+					<h6>{{bookstore.name}}</h6>
+					<p>{{bookstore.address}}</p>
+					<p>{{bookstore.phone}}</p>
+					<p>{{bookstore.website}}</p>
+				</ion-col>
+				<ion-col width-50 text-right>
+					<button ion-button icon-left outline (click)="toggleFollow()" *ngIf="!isFollowing">
+						<ion-icon small name="star"></ion-icon>
+						Follow
+					</button>
+
+					<button ion-button icon-only (click)="toggleFollow()" *ngIf="isFollowing">
+						<ion-icon small name="star"></ion-icon>
+					</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col width-100 text-right>
+					<button ion-button outline (click)="goToMap()">
+						<ion-icon name="map"></ion-icon>
+					</button>
+					<button ion-button outline (click)="goToDirections()">
+						<ion-icon name="navigate"></ion-icon>
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+	<sebm-google-map id="map" [latitude]="map.lat" [longitude]="map.lng" [zoom]="map.zoom">
+        <sebm-google-map-marker [latitude]="map.lat" [longitude]="map.lng">
+            <sebm-google-map-info-window>
+                <strong>{{map.markerLabel}}</strong>
+            </sebm-google-map-info-window>
+        </sebm-google-map-marker>
+    </sebm-google-map>
+
+
 </ion-content>

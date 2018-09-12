@@ -19,7 +19,7 @@ export class BookstoreHomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   	this.bookstore = this.navParams.data;
-  	console.log("**bookstore:", this.bookstore);
+  	//console.log("**bookstore:", this.bookstore);
   }
 
   ionViewDidLoad() {

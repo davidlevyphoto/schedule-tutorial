@@ -9,12 +9,21 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Home</ion-title>
+		<ion-title>Haruki</ion-title>
 	</ion-navbar>
 </ion-header>
 
 
 
 <ion-content padding>
+	<ion-list>
+		<ion-list-header>Followed Bookstores</ion-list-header>
+		<button ion-item *ngFor="let item of favorites" (click)="favoriteTapped($event, item)">
+			<ion-icon name="star"></ion-icon>
+			{{item.name}}
+			<p>{{item.address}}</p>
+		</button>
+	</ion-list>
 
+	<p>Start following your favorite bookstores to see their updates in your feed.</p>
 </ion-content>

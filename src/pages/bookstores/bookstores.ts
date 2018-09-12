@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { LoadingController, NavController, NavParams } from 'ionic-angular';
 import {BookstoreHomePage} from '../pages';
+import {HarukiApi} from '../../shared/shared'
 
 /*
   Generated class for the Bookstores page.
@@ -14,19 +15,24 @@ import {BookstoreHomePage} from '../pages';
 })
 export class BookstoresPage {
 
-  bookstores = [
-  	{ id: 1, name: 'The Last Bookstore'},
-  	{ id: 2, name: 'Skylight Books'},
-  	{ id: 3, name: 'Chevalier Books'},
-  	{ id: 4, name: 'Hennessey &amp; Ingalls'},
-  ];
+  bookstores: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private HarukiApi: HarukiApi, private loadingController: LoadingController) {}
 
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BookstoresPage');
+    
+    let loader = this.loadingController.create({
+      content: 'Getting Bookstores'
+    });
+
+    loader.present().then(() => {
+      this.HarukiApi.getBookstores().then(data => {
+        this.bookstores = data;
+        loader.dismiss();
+      });  
+    });
   }
 
   viewBookstore($event, bookstore) {

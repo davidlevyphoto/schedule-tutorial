@@ -7,10 +7,14 @@
 
   <ion-content>
     <ion-list>
-      <ion-list-header>Menu</ion-list-header>
+      <ion-list-header>Navigate</ion-list-header>
       <button ion-item menuClose (click)="goHome()">Home</button>
       <button ion-item menuClose (click)="goToBookstores()">Bookstores</button>
       <button ion-item menuClose (click)="goToCities()">Explore Cities</button>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>Favorites</ion-list-header>
+      <button ion-item menuClose *ngFor="let fav of favoriteBookstores" (click)="goToBookstore(fav)">{{fav.name}}</button>
     </ion-list>
   </ion-content>
 

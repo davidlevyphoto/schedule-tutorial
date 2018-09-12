@@ -1,6 +1,6 @@
 {
   "name": "elite-schedule-app",
-  "app_id": "9223f120",
-  "v2": true,
-  "typescript": true
+  "integrations": {},
+  "type": "ionic-angular",
+  "pro_id": "0aa6e663"
 }
